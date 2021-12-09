@@ -1,4 +1,4 @@
-`%>%` <- function(lhs, rhs) {
+`%>>>>%` <- function(lhs, rhs) {
   lhs <- substitute(lhs)
   rhs <- substitute(rhs)
   kind <- 1L
@@ -6,6 +6,8 @@
   lazy <- TRUE
   .External2(magrittr_pipe)
 }
+
+`%>%` <- function(x,f) do.call(f,list(x))
 
 #' Check pipe operator
 #' @export
